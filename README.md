@@ -58,7 +58,7 @@ Dans le but d'atteindre les différents objectifs, les missions suivantes ont é
 # Outils : 
     Github : 
     Python :
-    Excel :
+    Power Bi :
 
 #
  

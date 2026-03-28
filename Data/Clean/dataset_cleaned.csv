@@ -1,4 +1,4 @@
-ID,Annee_naissance,Niveau_Education,Statut_Marital,Revenu,Nb_Enfants,Nb_Ado,Nbjour_Dernier_Achat,Montant_Vins,Montant_Fruits,Montant_Viandes,Montant_Poissons,Montant_Sucreries,Montant_Or,NbAchat_Remise,NbAchat_SiteWeb,NbAchat_Catalogue,NbAchat_Magasin,NbVisit_SiteWebCeMois,Campagne3,Campagne4,Campagne5,Campagne1,Campagne2,Reponse,Plaintes,Pays,Montant_Total,Date_Enrollement,Age,Groupe_Age,Total_Enfants,Groupe_TotalEnfants,Revenu_Manquant,NbAchat_Total
+ID,Annee_naissance,Niveau_Education,Statut_Marital,Revenu,Nb_Enfants,Nb_Ado,Nbjour_Dernier_Achat,Montant_Vins,Montant_Fruits,Montant_Viandes,Montant_Poissons,Montant_Sucreries,Montant_Or,NbAchat_Remise,NbAchat_SiteWeb,NbAchat_Catalogue,NbAchat_Magasin,NbVisit_SiteWebCeMois,Campagne3,Campagne4,Campagne5,Campagne1,Campagne2,Reponse,Plaintes,Pays,Montant_Total,Date_Enrollement,Age,Groupe_Age,Total_Enfants,Groupe_TotalEnfants,Manquants,NbAchat_Total
 1826,1970,Graduate,Divorced,84835.0,0,0,0,189,104,379,111,189,218,1,4,4,6,1,False,False,False,False,False,True,False,Spain,1190,2014-06-16,44,35-45,0,0,False,15
 1,1961,Graduate,Single,57091.0,0,0,0,464,5,64,7,0,37,1,7,3,7,5,False,False,False,False,True,True,False,Canada,577,2014-06-15,53,45-60,0,0,False,18
 10476,1958,Graduate,Married,67267.0,0,1,0,134,11,59,15,2,30,1,3,2,5,2,False,False,False,False,False,False,False,USA,251,2014-05-13,56,45-60,1,0,False,11
@@ -510,6 +510,7 @@ ID,Annee_naissance,Niveau_Education,Statut_Marital,Revenu,Nb_Enfants,Nb_Ado,Nbjo
 4971,1962,PhD,Married,31497.0,0,1,22,108,1,28,13,1,4,2,3,1,4,8,False,False,False,False,False,False,False,Saudi Arabia,155,2012-12-06,52,45-60,1,0,False,10
 10560,1980,PhD,Single,36802.0,1,0,23,16,1,2,0,0,1,1,1,0,3,5,False,False,False,False,False,False,False,Spain,20,2014-06-16,34,25-35,1,0,False,5
 6892,1968,Graduate,Divorced,61671.0,0,1,23,641,7,56,0,0,28,8,10,4,6,8,False,True,False,True,False,False,False,Spain,732,2014-06-03,46,45-60,1,0,False,28
+11004,1893,2n Cycle,Single,60182.0,0,1,23,8,0,5,7,0,2,1,1,0,2,4,False,False,False,False,False,False,False,Saudi Arabia,22,2014-05-17,121,,1,0,False,4
 1818,1971,PhD,Married,29732.0,1,0,23,25,0,8,0,1,4,1,2,0,2,9,False,False,False,False,False,False,False,Canada,38,2014-03-25,43,35-45,1,0,False,5
 9485,1986,PhD,Married,45921.0,0,0,23,102,9,49,24,3,12,1,2,1,6,4,False,False,False,False,False,False,False,Saudi Arabia,199,2014-03-10,28,25-35,0,0,False,10
 6646,1984,Graduate,Married,16529.0,1,0,23,3,0,5,13,0,1,1,1,0,3,6,False,False,False,False,False,False,False,Canada,22,2014-03-01,30,25-35,1,0,False,5
@@ -822,6 +823,7 @@ ID,Annee_naissance,Niveau_Education,Statut_Marital,Revenu,Nb_Enfants,Nb_Ado,Nbjo
 10757,1967,PhD,Divorced,28420.0,1,0,36,4,2,5,2,0,0,1,1,0,2,6,False,False,False,False,False,False,False,Spain,13,2013-12-24,47,45-60,1,0,False,4
 6885,1977,Graduate,Divorced,32952.0,1,0,36,38,0,12,3,1,1,1,2,0,3,7,False,False,False,False,False,False,False,Canada,55,2013-12-01,37,35-45,1,0,False,6
 907,1975,Graduate,Married,46149.0,0,1,36,254,6,71,4,0,27,5,5,1,7,5,False,False,False,False,False,False,False,Spain,362,2013-11-29,39,35-45,1,0,False,18
+1150,1899,PhD,Married,83532.0,0,0,36,755,144,562,104,64,224,1,4,6,4,1,False,False,True,False,False,False,False,Spain,1853,2013-09-26,115,,0,0,False,15
 3867,1947,PhD,Married,73059.0,0,1,36,410,112,420,0,82,71,1,9,3,13,4,False,False,False,False,False,False,False,Spain,1095,2013-08-31,67,60+,1,0,False,26
 3859,1947,PhD,Married,73059.0,0,1,36,410,112,420,0,82,71,1,9,3,13,4,False,False,False,False,False,False,False,Saudi Arabia,1095,2013-08-31,67,60+,1,0,False,26
 3265,1959,Graduate,Married,35701.0,0,0,36,21,1,9,7,3,5,1,1,0,3,6,False,False,False,False,False,False,False,Spain,46,2013-03-19,55,45-60,0,0,False,5
@@ -2225,6 +2227,7 @@ ID,Annee_naissance,Niveau_Education,Statut_Marital,Revenu,Nb_Enfants,Nb_Ado,Nbjo
 3363,1974,2n Cycle,Married,20130.0,0,0,99,0,6,3,7,6,12,1,1,0,3,8,False,False,False,False,False,False,False,Spain,34,2014-03-17,40,35-45,0,0,False,5
 8595,1973,Graduate,Widow,42429.0,0,1,99,55,0,6,2,0,4,2,1,1,3,5,False,False,False,False,False,False,False,Australia,67,2014-02-11,41,35-45,1,0,False,7
 7232,1973,Graduate,Widow,42429.0,0,1,99,55,0,6,2,0,4,2,1,1,3,5,False,False,False,False,False,False,False,Spain,67,2014-02-11,41,35-45,1,0,False,7
+7829,1900,2n Cycle,Divorced,36640.0,1,0,99,15,6,8,7,4,25,1,2,1,2,5,False,False,False,False,False,False,True,India,65,2013-09-26,114,,1,0,False,6
 9977,1973,Graduate,Divorced,78901.0,0,1,99,321,11,309,33,26,34,3,9,3,5,4,False,False,False,False,False,False,False,USA,734,2013-09-17,41,35-45,1,0,False,20
 10142,1976,PhD,Divorced,66476.0,0,1,99,372,18,126,47,48,78,2,5,2,11,4,False,False,False,False,False,False,False,USA,689,2013-03-07,38,35-45,1,0,False,20
 5263,1977,2n Cycle,Married,31056.0,1,0,99,5,10,13,3,8,16,1,1,0,3,8,False,False,False,False,False,False,False,Spain,55,2013-01-22,37,35-45,1,0,False,5

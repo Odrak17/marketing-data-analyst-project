@@ -65,20 +65,42 @@ Dans le but d'atteindre les différents objectifs, les missions suivantes ont é
 
 # Présentation des résultats
 * Objectif 1 : Dans l'évalution de la qualité des données, nous avons remarqué sans grande surprise que le dataset présente des anomalies et les avons traitées via des règles bien définies qui nous détaillerons ci-dessous.
-- Avant d'aller plus loin il sied de signaler que les différentes colonnes ont été traduites de l'anglais en français pour une compréhension du jeu de données.
+- Avant d'aller plus loin il sied de signaler que les différentes colonnes ont été traduites de l'anglais en français pour une meilleure compréhension du jeu de données.
 
-- Nous avons remarqué un problème de typage concernant certaines colonnes. En effet, les différentes colonnes représentant les différentes campagnes marketing, les réponses et plaintes sont de type int ce qui est incohérent car nous avons que deux issues comme valeurs de ces variables(oui/non, vrai/faux, 1/0). Nous les avons donc converties en type bool. Aussi, la colonne Date_Inscription était de type object, qui n'est son type approprié et peut induire en erreur dans certaines opérations. Nous l'avons convertie en type date.
+- Problème de typage concernant certaines colonnes:
+    - Les différentes colonnes représentant les différentes campagnes marketing, les réponses et plaintes étaient de type int. Nous les avons donc converties en type bool.
 
-- Le dataset ne contenait que la colonne qui référençait l'année de naissance de chaque client et non une colonne de leurs différents âges. Conscient que le cerveau humain manipule mieux l'âge que l'année, et que nous travaillons sur des activités enregistrées de 2012 à 2014, nous avons créé une colonne âge en considérant 2014 comme année actuelle.
+    - La colonne Date_Inscription était de type object, qui n'est son type approprié et peut induire en erreur dans certaines opérations. Nous l'avons convertie en type date.
 
-- La colonne référençant le niveau d'éducation de chaque client contenait la modalité 'Graduate', ce qui est incohérent,suggérant une possible erreur de saisie suivi d'une uplication du mauvais terme. Nous l'avons remplacé par Graduation qui est correct et proche de Graduate. S'agissant de la colonne représentant le statut matrimonial de chaque client, nous avons remarqué deux modalités 'YOLO' et 'Absurd' qui n'ont total aucun rapport avec le statut matrimonial. Leur faible présence dans le dataset(au total 4/2240) nous a permis de les supprimer. Nous avons aussi remarqué la modalité 'Alone' qui n'est pas un statut matrimonial que nous avons fusionnée à la modalité 'Single' car leur sens est très proche. S'agissant de la modalité 'Together' qui n'est pas un statut matrimonial, nous l'avons fusionnée à 'Married' en raison de leur approximité.
+- Absence de la variable Age : Le dataset ne contenait que la colonne qui référençait l'année de naissance de chaque client. Conscient que le cerveau humain manipule mieux l'âge que l'année, et que nous travaillons sur des activités enregistrées de 2012 à 2014, nous avons créé une colonne âge en considérant 2014 comme année actuelle.
+
+- Incohérences de certaines  modalités.
+    - La colonne référençant le niveau d'éducation de chaque client contenait la modalité 'Graduate', ce qui est incohérent,suggérant une possible erreur de saisie suivi d'une duplication du mauvais terme. Nous l'avons remplacé par Graduation qui est correct et proche de Graduate.
+
+    - S'agissant de la colonne représentant le statut matrimonial de chaque client, nous avons remarqué deux modalités 'YOLO' et 'Absurd' qui n'ont totalement aucun rapport avec le statut matrimonial. Leur faible présence dans la colonne Statut_Marital(au total 4/2240) nous a permis de les supprimer. 
+
+    - Nous avons aussi remarqué la modalité 'Alone' qui n'est pas un statut matrimonial. Nous l'avons fusionnée à la modalité 'Single' car leur sens est très proche. 
+    
+    - S'agissant de la modalité 'Together' qui n'est pas un statut matrimonial, nous l'avons fusionnée à 'Married' en raison de leur approximité.
 
 - Il sied de signaler qu'en depit de certaines anomalies présentées, le dataset ne présente aucun doublon.
 
-- S'agissant des valeurs manquantes, seul la colonnes Revenu présente des valeurs manquantes, précisément 24 valeurs manquantes. Avant tout traitement nous avons cherché à identifier le type de valeur manquante (MCAR,MAR,MNAR) afin d'utiliser la méthode de traitement  appropriée. Pour ce faire nous avons fait recours au test de contingence du chi-2 entre la variable catégorielle représentant les revenus manquants et les variables catégorielles représentant les niveaux d'éducation, les tranches d'âge, le statut matrimonial et les catégories de nombre d'enfants suspectées d'avoir une relation avec cette dernière. Bien que toutes les hypothèses n'ont pas été retenues toutefois, il existe une relation de dépendance entre les variables reférençant les revenus manquants et les catégories de nombre d'enfants, nous faisant que comprendre que les valeurs manquantes sont de type MAR. Après avoir étudié la normalité des données, une méthode d'imputation conditionnelle par la médiane en fonction des catégories de nombre d'enfants a été mise en place  afin pallier le problème de valeurs manquantes.
+- S'agissant des valeurs manquantes :
+    - Seul la colonnes Revenu présentait des valeurs manquantes, précisément 24 valeurs manquantes(soit 0,01% de la colonne revenu). 
 
-- S'agissant des valeurs aberrantes, nous avons regroupé les différents montants dépensés en une seule variables, autant pour les différents nombre d''achat avec leur canal afin de ne pas considérer comme abberrant la préférence d'un client. Bien que certaines colonnes ont présenté des valeurs aberrantes proche de l'intervalle défini, celle qui a attiré notre attention est la colonne Revenu avec, en dehors de ces outliers proches de l'intervalle défini, une valeur aberrante extrême qui est 666666. Nous aurions pu l'assimiler à un client premium mais son très faible pouvoir d'achat nous a fait rejetté cette hypothèse. En raison de sa faible proportion dans le revenu, nous avons donc supprimé cette valeur aberrante car elle s'écarte largement de la réalité d'un client de compagnie. Aussi toutes les valeurs aberrantes proches de l'intervalle définie n'ont pas été traitées car qui dit valeur aberrante ne dit pas forcément anomalie, de même celles-ci se rapprochent de la tendance des revenus des  clients et il faut noter que certains clients ont un pouvoir d'achat assez conséquent. S'agissant de la variable âge nous avons détecté 114, 115 et 121 qui ne sont pas plausibles. En raison de leur faible proportion dans la colonne âge, nous avons décidé de les supprimer.
+    - Avant tout traitement, nous avons pu identifié que les valeurs manquantes sont de type MAR et avons procédé à une imputation conditionnnelle par la médiane en fonction des catégories des nombre d'enfants.
+
+- S'agissant des valeurs aberrantes:
+     -nous avons regroupé les variables référençant les différents montants(Montant_Fruits,Montant_Or,...) dépensés en une seule variable, autant pour les différents nombre d'achat selon leur canal(Nb_SiteWeb, NbAchat_Magasin,...) afin de ne pas considérer comme abberrant la préférence d'un client. 
+
+     - La colonne "Nbjour_Dernier_Achat" n'a présenté aucune valeur aberrante
+     
+     - Les colonnes("Revenu","Montant_Total","Age", "NbAchat_Total", ) ont présenté des valeurs aberrantes proches de l'intervalle défini. Celle qui a attiré notre attention est la colonne "Revenu" avec une valeur aberrante extrême qui est 666666 . Nous aurions pu l'assimiler à un client premium mais son très faible pouvoir d'achat nous a fait rejetté cette hypothèse. En raison de sa faible proportion dans le revenu(0,0004%), nous avons donc supprimé cette valeur aberrante car elle s'écarte largement de la réalité d'un client de compagnie. 
+     
+     - Aussi toutes les valeurs aberrantes proches de l'intervalle définie n'ont pas été traitées car qui dit valeur aberrante ne dit pas forcément anomalie, de même celles-ci se rapprochent de la tendance des différentes variables et il faut noter que certains clients ont un pouvoir d'achat assez conséquent et une forte préférence pour certains produits et canal d'achat. 
+     
+    -Conernant la variable âge nous avons détecté 114, 115 et 121 qui ne sont pas plausibles. En raison de leur faible proportion dans la colonne âge, nous avons décidé de les supprimer.
 
 - Après traitement des anomalies du dataset brut, il a été exporté en fichier .csv afin de contribuer à l'atteinte des objectifs fixés.
 
-*Objectif 2:
+* Objectif 2:

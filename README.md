@@ -91,7 +91,7 @@ Dans le but d'atteindre les différents objectifs, les missions suivantes ont é
     - Avant tout traitement, nous avons pu identifié que les valeurs manquantes sont de type MAR et avons procédé à une imputation conditionnnelle par la médiane en fonction des catégories des nombre d'enfants.
 
 - S'agissant des valeurs aberrantes:
-     -nous avons regroupé les variables référençant les différents montants(Montant_Fruits,Montant_Or,...) dépensés en une seule variable, autant pour les différents nombre d'achat selon leur canal(Nb_SiteWeb, NbAchat_Magasin,...) afin de ne pas considérer comme abberrant la préférence d'un client. 
+     - Nous avons regroupé les variables référençant les différents montants(Montant_Fruits,Montant_Or,...) dépensés en une seule variable, autant pour les différents nombre d'achat selon leur canal(Nb_SiteWeb, NbAchat_Magasin,...) afin de ne pas considérer comme abberrant la préférence d'un client. 
 
      - La colonne "Nbjour_Dernier_Achat" n'a présenté aucune valeur aberrante
      

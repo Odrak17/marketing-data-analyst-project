@@ -99,7 +99,7 @@ Dans le but d'atteindre les différents objectifs, les missions suivantes ont é
      
      - Aussi toutes les valeurs aberrantes proches de l'intervalle définie n'ont pas été traitées car qui dit valeur aberrante ne dit pas forcément anomalie, de même celles-ci se rapprochent de la tendance des différentes variables et il faut noter que certains clients ont un pouvoir d'achat assez conséquent et une forte préférence pour certains produits et canal d'achat. 
      
-    -Conernant la variable âge nous avons détecté 114, 115 et 121 qui ne sont pas plausibles. En raison de leur faible proportion dans la colonne âge, nous avons décidé de les supprimer.
+    - Conernant la variable âge nous avons détecté 114, 115 et 121 qui ne sont pas plausibles. En raison de leur faible proportion dans la colonne âge, nous avons décidé de les supprimer.
 
 - Après traitement des anomalies du dataset brut, il a été exporté en fichier .csv afin de contribuer à l'atteinte des objectifs fixés.
 

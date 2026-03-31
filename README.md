@@ -75,6 +75,9 @@ Dans le but d'atteindre les différents objectifs, les missions suivantes ont é
 - Absence de la variable Age : Le dataset ne contenait que la colonne qui référençait l'année de naissance de chaque client. Conscient que le cerveau humain manipule mieux l'âge que l'année, et que nous travaillons sur des activités enregistrées de 2012 à 2014, nous avons créé une colonne âge en considérant 2014 comme année actuelle.
 
 - Incohérences de certaines  modalités.
+
+    - Certains clients (4 au total) avaient effectué aucun achat mais leur nombre de jour depuis le dernier achat était différent de 0. Aussi ils ont dépensé de l'argent pour certains produits sans pour autant être enregistré danns les achats. Face à cette incohérence, nous les avons supprimé
+
     - La colonne référençant le niveau d'éducation de chaque client contenait la modalité 'Graduate', ce qui est incohérent,suggérant une possible erreur de saisie suivi d'une duplication du mauvais terme. Nous l'avons remplacé par Graduation qui est correct et proche de Graduate.
 
     - S'agissant de la colonne représentant le statut matrimonial de chaque client, nous avons remarqué deux modalités 'YOLO' et 'Absurd' qui n'ont totalement aucun rapport avec le statut matrimonial. Leur faible présence dans la colonne Statut_Marital(au total 4/2240) nous a permis de les supprimer. 
@@ -95,11 +98,11 @@ Dans le but d'atteindre les différents objectifs, les missions suivantes ont é
 
      - La colonne "Nbjour_Dernier_Achat" n'a présenté aucune valeur aberrante
      
-     - Les colonnes("Revenu","Montant_Total","Age", "NbAchat_Total", ) ont présenté des valeurs aberrantes proches de l'intervalle défini. Celle qui a attiré notre attention est la colonne "Revenu" avec une valeur aberrante extrême qui est 666666 . Nous aurions pu l'assimiler à un client premium mais son très faible pouvoir d'achat nous a fait rejetté cette hypothèse. En raison de sa faible proportion dans le revenu(0,0004%), nous avons donc supprimé cette valeur aberrante car elle s'écarte largement de la réalité d'un client de compagnie. 
+     - Les colonnes "Montant_Total" et "NbAchat_Total"  ont respectivment 3 et 2 valeurs aberrantes proches de l'intervalle défini.Aussi toutes les valeurs aberrantes proches de l'intervalle définie n'ont pas été traitées car qui dit valeur aberrante ne dit pas forcément anomalie, de même celles-ci se rapprochent de la tendance des différentes variables et il faut noter que certains clients ont un pouvoir d'achat assez conséquent et une forte préférence pour certains produits et canal d'achat.
      
-     - Aussi toutes les valeurs aberrantes proches de l'intervalle définie n'ont pas été traitées car qui dit valeur aberrante ne dit pas forcément anomalie, de même celles-ci se rapprochent de la tendance des différentes variables et il faut noter que certains clients ont un pouvoir d'achat assez conséquent et une forte préférence pour certains produits et canal d'achat. 
+    - Les  colonnes "Revenu"  et "Age" ont présenté des outlliers extrêmes respectivement 666666 pour "Revenu" et 114,115 et 121 pour "Age". Nous avons testé les transformations logarithmiques(passge de 5 à 38 valeurs aberrantes après transformation et passage de 6,93 à -1,13 comme coefficient d'asymétrie) et racine carrée(passage de 5 à 12 outliers après transformation et passage de 6,93 à 0,35 comme coefficient d'asymétrie) 
+        - Nous avons donc opté pour une winorisation de 1% afin de réduire l'impact des outliers tout en conservant la réalité des données clients
      
-    - Conernant la variable âge nous avons détecté 114, 115 et 121 qui ne sont pas plausibles. En raison de leur faible proportion dans la colonne âge, nous avons décidé de les supprimer.
 
 - Après traitement des anomalies du dataset brut, il a été exporté en fichier .csv afin de contribuer à l'atteinte des objectifs fixés.
 
